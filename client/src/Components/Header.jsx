@@ -6,7 +6,7 @@ import logo  from '../assets/logo.png'
 
 const Header = () => {
   return (
-    <div className='bg-transparent h-24 flex flex-row  top-0 p-5  items-start justify-between max-w-6xl mx-auto z-20 xl:items-center '> 
+    <div className='bg-transparent h-24 flex flex-row   top-0 md:p-5 p-10  items-start justify-between max-w-6xl mx-auto z-20 xl:items-center '> 
     
     <motion.div
     initial={{x:-200}}
