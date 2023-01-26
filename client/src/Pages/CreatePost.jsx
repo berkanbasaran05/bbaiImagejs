@@ -64,7 +64,7 @@ const CreatePost = () => {
           headers: {
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify({ ...form }),
+          body: JSON.stringify(form),
         });
 
         await response.json();
@@ -84,10 +84,10 @@ const CreatePost = () => {
 
 
   return (
-    <section className="max-w-7xl mx-auto">
+    <section className="max-w-7xl justify-center items-center flex flex-col p-10 space-y-8  mx-auto">
     <div>
-      <h1 className="font-extrabold text-[#222328] text-[32px]">Create</h1>
-      <p className="mt-2 text-[#666e75] text-[14px] max-w-[500px]">Generate an imaginative image through DALL-E AI and share it with the community</p>
+      <h1 className="font-extrabold text-white text-[32px]">Create</h1>
+      <p className="mt-2 text-white text-[14px] max-w-[500px]">Generate an imaginative image through DALL-E AI and share it with the community</p>
     </div>
 
     <form className="mt-16 max-w-3xl" onSubmit={handleSubmit}>
