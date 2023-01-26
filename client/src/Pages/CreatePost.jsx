@@ -1,6 +1,6 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
-
+import { motion } from 'framer-motion';
 import { preview } from '../assets';
 import { getRandomPrompt } from '../utils';
 import { FormField, Loader } from '../Components/';
@@ -59,7 +59,7 @@ const CreatePost = () => {
     if (form.prompt && form.photo) {
       setLoading(true);
       try {
-        const response = await fetch('http://localhost:8080/api/v1/post', {
+        const response = await fetch('https://ai-image-suy8.onrender.com/api/v1/post', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -86,12 +86,12 @@ const CreatePost = () => {
   return (
     <section className="max-w-7xl justify-center items-center flex flex-col p-10 space-y-8  mx-auto">
     <div>
-      <h1 className="font-extrabold text-white text-[32px]">Create</h1>
-      <p className="mt-2 text-white text-[14px] max-w-[500px]">Generate an imaginative image through DALL-E AI and share it with the community</p>
+      <h1 className="font-extrabold text-white text-[32px]">Create Image with AI</h1>
+      <p className="mt-2 text-white text-[14px] max-w-[500px]">Generate artworks using artificial intelligence techniques to produce visually striking and unique pieces. Share with community</p>
     </div>
 
     <form className="mt-16 max-w-3xl" onSubmit={handleSubmit}>
-      <div className="flex flex-col gap-5">
+      <motion.div className="flex flex-col gap-5">
         <FormField
           labelName="Your Name"
           type="text"
@@ -133,23 +133,23 @@ const CreatePost = () => {
             </div>
           )}
         </div>
-      </div>
+      </motion.div>
 
       <div className="mt-5 flex gap-5">
         <button
           type="button"
           onClick={generateImage}
-          className=" text-white bg-green-700 font-medium rounded-md text-sm w-full sm:w-auto px-5 py-2.5 text-center"
+          className=" text-white bg-gray-700 hover:bg-gray-500 font-medium rounded-full text-sm w-full sm:w-auto px-5 py-2.5 text-center"
         >
           {generatingImg ? 'Generating...' : 'Generate'}
         </button>
       </div>
 
       <div className="mt-10">
-        <p className="mt-2 text-[#666e75] text-[14px]">** Once you have created the image you want, you can share it with others in the community **</p>
+        <p className="mt-2 text-[#666e75] text-[14px]"> After creating the image, you can share it with our community if you like.</p>
         <button
           type="submit"
-          className="mt-3 text-white bg-[#6469ff] font-medium rounded-md text-sm w-full sm:w-auto px-5 py-2.5 text-center"
+          className="mt-3 text-white bg-gray-700 hover:bg-gray-500 font-medium rounded-full text-sm w-full sm:w-auto px-5 py-2.5 text-center"
         >
           {loading ? 'Sharing...' : 'Share with the Community'}
         </button>

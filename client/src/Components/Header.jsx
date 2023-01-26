@@ -29,7 +29,7 @@ const Header = () => {
 
          
     <Link to={"/create-post"}>
-    <button className='rounded-3xl flex flex-row w-40   mx-auto justify-evenly p-2  items-center bg-gray-700 hover:bg-gray-700 text-white'>
+    <button className='rounded-3xl flex flex-row w-40   mx-auto justify-evenly p-2  items-center bg-gray-700 hover:bg-gray-500 text-white'>
         <h1>Create with AI </h1>
         <PhotoIcon className='w-7 h-7 text-white'/>
 

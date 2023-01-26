@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Cursor, useTypewriter } from 'react-simple-typewriter'
-
+import { motion } from 'framer-motion';
 import { Card, FormField, Loader } from '../Components';
 
 const RenderCards = ({ data, title }) => {
@@ -75,14 +75,18 @@ const Home = () => {
 
   return (
     <section className="max-w-7xl p-10 flex flex-col space-y-8 justify-center items-center overflow-hidden   mx-auto">
-      <div className='flex flex-col mx-auto relative'>
+      <motion.div 
+      initial={{y:-200}}
+      animate={{y:0}}
+      transition={{duration:1.5}}
+      className='flex flex-col mx-auto relative'>
         <h1 className="font-extrabold text-white text-[32px] uppercase tracking-[10px]">artwork created by other users</h1>
         <div className='flex flex-row items-center mx-auto justify-center space-x-4'>
           <p className="mt-2 text-[#666e75] text-[14px] max-w-[500px]">Unleash the Power of AI: Create Stunning Images with Ease Here <Cursor/> </p>
        </div>
         
         
-      </div>
+      </motion.div>
 
       <div className="mt-24 w-full">
         <FormField
@@ -95,7 +99,11 @@ const Home = () => {
         />
       </div>
 
-      <div className="flex flex-col mt-10">
+      <motion.div 
+      initial={{opacity:0}}
+      whileInView={{opacity:1}}
+
+      className="flex flex-col mt-10">
         {loading ? (
           <div className="flex justify-center items-center">
             <Loader />
@@ -122,7 +130,7 @@ const Home = () => {
             </div>
           </>
         )}
-      </div>
+      </motion.div>
     </section>
   );
 };

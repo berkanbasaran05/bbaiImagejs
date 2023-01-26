@@ -6,6 +6,7 @@ import {BrowserRouter, Route, Routes} from 'react-router-dom'
 import Header from './Components/Header'
 import Home from './Pages/Home';
 import CreatePost from './Pages/CreatePost';
+import  Footer  from './Components/Footer';
 
 function App() {
   return (
@@ -19,8 +20,9 @@ function App() {
 
     </Routes>
 
-   
+    <Footer></Footer>
    </BrowserRouter>
+   
   );
 }
 
